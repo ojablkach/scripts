@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Remove temp file if already exist 
+
+rm -rf /tmp/networkinterface
+
+# Create file with all avaiable network interfaces 
+
+networksetup -listallnetworkservices >> /tmp/networkinterface
+
+#Remove first unnecery line from the file
+
+tail -n +2 /tmp/networkinterface > /tmp/networktmp && mv /tmp/networktmp /tmp/networkinterface
+
+# Disable IPv6 for all interfaces listed in the file
+ 
+cat /tmp/networkinterface | while read line
+
+do  networkinterface=$(echo "$line" )
+
+echo "$networkinterface"
+
+networksetup -setv6off "$networkinterface"
+
+done 
+
+rm -rf /tmp/networkinterface
