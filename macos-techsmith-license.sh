@@ -3,13 +3,11 @@
 # script made by https://ojablkach.xyz
 # example
 # key 00000-ZZZZZ-YYYYY-XXXXX-JJJJJ
-# software Snagit
-# year 2023
+# software Snagit or Camtasia
 
 file="LicenseKey"
 key=$4
 software=$5
-year=$6
 
 if [[ -f "/Users/Shared/TechSmith/${software}/${file}" ]]
 	then
