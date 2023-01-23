@@ -15,6 +15,5 @@ if [[ -f "/Users/Shared/TechSmith/${software}/${file}" ]]
 	else
 		echo "The ${file} does not exist"
 		mkdir -p /Users/Shared/TechSmith/${software}
-		echo ${key} > /Users/Shared/TechSmith/${software}/${file}
-		echo "${file} installed"
+		echo ${key} > /Users/Shared/TechSmith/${software}/${file} && echo "${file} installed"
 fi
